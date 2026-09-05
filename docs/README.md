@@ -58,3 +58,7 @@ Path("schema.json").write_text(to_json(schema))
 Path("api.proto").write_text(to_proto(schema))
 Path("report.md").write_text(to_markdown(schema))
 ```
+
+## Automatyzacja repozytorium
+
+- [Synchronizacja metadanych](information/org-metadata-sync.md) — koordynator, harmonogram i diagnostyka.
