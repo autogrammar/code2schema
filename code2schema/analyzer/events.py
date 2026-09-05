@@ -89,12 +89,14 @@ def _find_emitters(modules: List[ModuleIR]) -> List[DomainEvent]:
 
 def _find_handlers(events: List[DomainEvent], modules: List[ModuleIR]) -> None:
     """Krok 2: dopasuj handlery do zdarzeń (mutuje events in-place)."""
+    # Event keywords are invariant for this pass; normalize each only once.
+    keywords = [(ev, ev.name.lower().replace("event", "").strip()) for ev in events]
     for mod in modules:
         for f in mod.functions:
             if _EVENT_HANDLER_PATTERNS.search(f.name):
-                for ev in events:
-                    keyword = ev.name.lower().replace("event", "").strip()
-                    if keyword and keyword in f.name.lower():
+                handler_name = f.name.lower()
+                for ev, keyword in keywords:
+                    if keyword and keyword in handler_name:
                         ev.handled_by.append(f.qualified_name)
 
 
