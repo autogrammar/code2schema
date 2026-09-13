@@ -1,149 +1,135 @@
-project: /home/tom/github/semcod/code2schema
+project: /home/tom/github/autogrammar/code2schema
 generated_from: code2llm call graph analysis
 stats:
-  total_nodes: 41
-  total_edges: 41
+  total_nodes: 50
+  total_edges: 50
   modules_count: 7
 nodes:
-  code2schema.core.extractor.extract_module:
-    name: extract_module
-    module: code2schema.core.extractor
-    line: 115
-    cyclomatic_complexity: 5
-    calls_out: 14
+  code2schema.cli._run_reports:
+    name: _run_reports
+    module: code2schema.cli
+    line: 163
+    cyclomatic_complexity: 6
+    calls_out: 13
     calls_in: 1
-  code2schema.analyzer.cqrs.build_call_graph:
-    name: build_call_graph
-    module: code2schema.analyzer.cqrs
-    line: 51
-    cyclomatic_complexity: 7
-    calls_out: 5
-    calls_in: 1
-  code2schema.analyzer.graph.build_rich_graph:
-    name: build_rich_graph
-    module: code2schema.analyzer.graph
-    line: 22
-    cyclomatic_complexity: 8
-    calls_out: 5
-    calls_in: 1
-  code2schema.analyzer.graph.write_dot:
-    name: write_dot
-    module: code2schema.analyzer.graph
-    line: 99
-    cyclomatic_complexity: 3
-    calls_out: 11
-    calls_in: 1
-  code2schema.core.extractor._path_to_module:
-    name: _path_to_module
-    module: code2schema.core.extractor
-    line: 157
-    cyclomatic_complexity: 1
-    calls_out: 3
-    calls_in: 1
-  code2schema.codegen.to_json:
-    name: to_json
-    module: code2schema.codegen
-    line: 20
-    cyclomatic_complexity: 1
-    calls_out: 2
-    calls_in: 1
-  code2schema.analyzer.cqrs.generate_rules:
-    name: generate_rules
-    module: code2schema.analyzer.cqrs
-    line: 102
-    cyclomatic_complexity: 7
-    calls_out: 6
-    calls_in: 1
-  code2schema.analyzer.graph.centrality_report:
-    name: centrality_report
-    module: code2schema.analyzer.graph
-    line: 53
-    cyclomatic_complexity: 2
-    calls_out: 4
-    calls_in: 1
-  code2schema.analyzer.events._derive_event_name:
-    name: _derive_event_name
-    module: code2schema.analyzer.events
-    line: 143
-    cyclomatic_complexity: 5
-    calls_out: 8
-    calls_in: 2
   code2schema.codegen._safe_proto_name:
     name: _safe_proto_name
     module: code2schema.codegen
-    line: 115
+    line: 117
     cyclomatic_complexity: 2
     calls_out: 3
     calls_in: 1
-  code2schema.analyzer.events._find_command_handlers:
-    name: _find_command_handlers
+  code2schema.core.extractor.extract_module:
+    name: extract_module
+    module: code2schema.core.extractor
+    line: 146
+    cyclomatic_complexity: 5
+    calls_out: 14
+    calls_in: 1
+  code2schema.cli._resolve_optional_path:
+    name: _resolve_optional_path
+    module: code2schema.cli
+    line: 110
+    cyclomatic_complexity: 3
+    calls_out: 1
+    calls_in: 3
+  code2schema.cli.main:
+    name: main
+    module: code2schema.cli
+    line: 222
+    cyclomatic_complexity: 5
+    calls_out: 11
+    calls_in: 0
+  code2schema.analyzer.events.infer_event_model:
+    name: infer_event_model
     module: code2schema.analyzer.events
-    line: 99
-    cyclomatic_complexity: 9
+    line: 131
+    cyclomatic_complexity: 1
     calls_out: 5
+    calls_in: 1
+  code2schema.cli._resolve_required_path:
+    name: _resolve_required_path
+    module: code2schema.cli
+    line: 106
+    cyclomatic_complexity: 2
+    calls_out: 0
+    calls_in: 1
+  code2schema.analyzer.cqrs.detect_cycles:
+    name: detect_cycles
+    module: code2schema.analyzer.cqrs
+    line: 73
+    cyclomatic_complexity: 1
+    calls_out: 2
+    calls_in: 1
+  code2schema.cli._run_extraction:
+    name: _run_extraction
+    module: code2schema.cli
+    line: 150
+    cyclomatic_complexity: 4
+    calls_out: 4
     calls_in: 1
   code2schema.analyzer.graph.layer_violations:
     name: layer_violations
     module: code2schema.analyzer.graph
-    line: 70
+    line: 73
     cyclomatic_complexity: 8
-    calls_out: 2
-    calls_in: 1
-  code2schema.codegen.write_markdown:
-    name: write_markdown
-    module: code2schema.codegen
-    line: 109
-    cyclomatic_complexity: 1
-    calls_out: 2
-    calls_in: 1
-  code2schema.codegen.write_proto:
-    name: write_proto
-    module: code2schema.codegen
-    line: 61
-    cyclomatic_complexity: 1
     calls_out: 2
     calls_in: 1
   code2schema.analyzer.events._find_handlers:
     name: _find_handlers
     module: code2schema.analyzer.events
-    line: 88
-    cyclomatic_complexity: 7
+    line: 90
+    cyclomatic_complexity: 8
     calls_out: 6
     calls_in: 1
-  code2schema.codegen.to_markdown:
-    name: to_markdown
+  code2schema.codegen.write_markdown:
+    name: write_markdown
     module: code2schema.codegen
-    line: 67
-    cyclomatic_complexity: 7
-    calls_out: 16
-    calls_in: 1
-  code2schema.analyzer.events.infer_event_model:
-    name: infer_event_model
-    module: code2schema.analyzer.events
-    line: 134
-    cyclomatic_complexity: 1
-    calls_out: 5
-    calls_in: 1
-  code2schema.codegen.visualizer.write_html:
-    name: write_html
-    module: code2schema.codegen.visualizer
-    line: 316
+    line: 110
     cyclomatic_complexity: 1
     calls_out: 2
     calls_in: 1
-  code2schema.analyzer.cqrs.analyze:
-    name: analyze
-    module: code2schema.analyzer.cqrs
-    line: 139
-    cyclomatic_complexity: 6
-    calls_out: 9
+  code2schema.codegen.visualizer.to_html:
+    name: to_html
+    module: code2schema.codegen.visualizer
+    line: 333
+    cyclomatic_complexity: 1
+    calls_out: 3
     calls_in: 1
-  code2schema.analyzer.graph.hub_nodes:
-    name: hub_nodes
-    module: code2schema.analyzer.graph
-    line: 61
-    cyclomatic_complexity: 3
-    calls_out: 1
+  code2schema.cli._project_name_from_path:
+    name: _project_name_from_path
+    module: code2schema.cli
+    line: 32
+    cyclomatic_complexity: 6
+    calls_out: 3
+    calls_in: 1
+  code2schema.analyzer.events._past_tense:
+    name: _past_tense
+    module: code2schema.analyzer.events
+    line: 158
+    cyclomatic_complexity: 1
+    calls_out: 3
+    calls_in: 1
+  code2schema.analyzer.cqrs._infer_role:
+    name: _infer_role
+    module: code2schema.analyzer.cqrs
+    line: 34
+    cyclomatic_complexity: 4
+    calls_out: 0
+    calls_in: 2
+  code2schema.codegen.write_json:
+    name: write_json
+    module: code2schema.codegen
+    line: 26
+    cyclomatic_complexity: 1
+    calls_out: 2
+    calls_in: 1
+  code2schema.cli._resolve_paths:
+    name: _resolve_paths
+    module: code2schema.cli
+    line: 141
+    cyclomatic_complexity: 1
+    calls_out: 2
     calls_in: 1
   code2schema.analyzer.events._find_aggregates:
     name: _find_aggregates
@@ -152,197 +138,241 @@ nodes:
     cyclomatic_complexity: 5
     calls_out: 3
     calls_in: 1
-  code2schema.analyzer.cqrs.build_workflows:
-    name: build_workflows
-    module: code2schema.analyzer.cqrs
-    line: 82
-    cyclomatic_complexity: 6
+  code2schema.codegen.to_markdown:
+    name: to_markdown
+    module: code2schema.codegen
+    line: 68
+    cyclomatic_complexity: 7
+    calls_out: 16
+    calls_in: 1
+  code2schema.codegen.visualizer._group_rules_by_target:
+    name: _group_rules_by_target
+    module: code2schema.codegen.visualizer
+    line: 70
+    cyclomatic_complexity: 2
     calls_out: 3
     calls_in: 1
-  code2schema.analyzer.graph.detect_cycles:
-    name: detect_cycles
-    module: code2schema.analyzer.graph
-    line: 66
+  code2schema.analyzer.cqrs.generate_rules:
+    name: generate_rules
+    module: code2schema.analyzer.cqrs
+    line: 104
+    cyclomatic_complexity: 7
+    calls_out: 6
+    calls_in: 1
+  code2schema.cli._resolve_output_dir:
+    name: _resolve_output_dir
+    module: code2schema.cli
+    line: 98
+    cyclomatic_complexity: 3
+    calls_out: 1
+    calls_in: 1
+  code2schema.codegen.to_json:
+    name: to_json
+    module: code2schema.codegen
+    line: 21
     cyclomatic_complexity: 1
     calls_out: 2
-    calls_in: 1
-  code2schema.cli._build_parser:
-    name: _build_parser
-    module: code2schema.cli
-    line: 38
-    cyclomatic_complexity: 1
-    calls_out: 15
-    calls_in: 1
-  code2schema.cli._resolve_paths:
-    name: _resolve_paths
-    module: code2schema.cli
-    line: 64
-    cyclomatic_complexity: 11
-    calls_out: 7
-    calls_in: 1
-  code2schema.cli._project_name_from_path:
-    name: _project_name_from_path
-    module: code2schema.cli
-    line: 23
-    cyclomatic_complexity: 6
-    calls_out: 3
     calls_in: 1
   code2schema.codegen.to_proto:
     name: to_proto
     module: code2schema.codegen
-    line: 31
+    line: 33
     cyclomatic_complexity: 3
     calls_out: 10
     calls_in: 1
-  code2schema.analyzer.graph.graph_summary:
-    name: graph_summary
-    module: code2schema.analyzer.graph
-    line: 118
-    cyclomatic_complexity: 8
-    calls_out: 21
+  code2schema.core.extractor._path_to_module:
+    name: _path_to_module
+    module: code2schema.core.extractor
+    line: 188
+    cyclomatic_complexity: 1
+    calls_out: 3
     calls_in: 1
-  code2schema.codegen.write_json:
-    name: write_json
-    module: code2schema.codegen
-    line: 25
+  code2schema.analyzer.graph.write_dot:
+    name: write_dot
+    module: code2schema.analyzer.graph
+    line: 103
+    cyclomatic_complexity: 3
+    calls_out: 11
+    calls_in: 1
+  code2schema.cli._build_parser:
+    name: _build_parser
+    module: code2schema.cli
+    line: 47
+    cyclomatic_complexity: 1
+    calls_out: 15
+    calls_in: 1
+  code2schema.analyzer.graph.build_rich_graph:
+    name: build_rich_graph
+    module: code2schema.analyzer.graph
+    line: 24
+    cyclomatic_complexity: 8
+    calls_out: 5
+    calls_in: 1
+  code2schema.codegen.visualizer.write_html:
+    name: write_html
+    module: code2schema.codegen.visualizer
+    line: 339
     cyclomatic_complexity: 1
     calls_out: 2
+    calls_in: 1
+  code2schema.analyzer.cqrs.analyze:
+    name: analyze
+    module: code2schema.analyzer.cqrs
+    line: 147
+    cyclomatic_complexity: 6
+    calls_out: 9
+    calls_in: 1
+  code2schema.analyzer.graph.centrality_report:
+    name: centrality_report
+    module: code2schema.analyzer.graph
+    line: 56
+    cyclomatic_complexity: 2
+    calls_out: 4
     calls_in: 1
   code2schema.cli._write_outputs:
     name: _write_outputs
     module: code2schema.cli
-    line: 114
+    line: 184
     cyclomatic_complexity: 6
     calls_out: 8
-    calls_in: 1
-  code2schema.codegen.visualizer.to_html:
-    name: to_html
-    module: code2schema.codegen.visualizer
-    line: 310
-    cyclomatic_complexity: 1
-    calls_out: 3
-    calls_in: 1
-  code2schema.analyzer.cqrs.detect_cycles:
-    name: detect_cycles
-    module: code2schema.analyzer.cqrs
-    line: 70
-    cyclomatic_complexity: 1
-    calls_out: 2
-    calls_in: 1
-  code2schema.cli._run_extraction:
-    name: _run_extraction
-    module: code2schema.cli
-    line: 80
-    cyclomatic_complexity: 4
-    calls_out: 4
     calls_in: 1
   code2schema.analyzer.events._find_emitters:
     name: _find_emitters
     module: code2schema.analyzer.events
-    line: 75
+    line: 77
     cyclomatic_complexity: 6
+    calls_out: 6
+    calls_in: 1
+  code2schema.analyzer.cqrs.build_call_graph:
+    name: build_call_graph
+    module: code2schema.analyzer.cqrs
+    line: 54
+    cyclomatic_complexity: 7
+    calls_out: 5
+    calls_in: 1
+  code2schema.codegen.visualizer._build_nodes:
+    name: _build_nodes
+    module: code2schema.codegen.visualizer
+    line: 32
+    cyclomatic_complexity: 3
+    calls_out: 5
+    calls_in: 1
+  code2schema.cli._build_output_paths:
+    name: _build_output_paths
+    module: code2schema.cli
+    line: 127
+    cyclomatic_complexity: 1
     calls_out: 6
     calls_in: 1
   code2schema.codegen.visualizer._build_graph_data:
     name: _build_graph_data
     module: code2schema.codegen.visualizer
-    line: 31
-    cyclomatic_complexity: 9
-    calls_out: 22
+    line: 91
+    cyclomatic_complexity: 1
+    calls_out: 5
     calls_in: 1
-  code2schema.cli._run_reports:
-    name: _run_reports
-    module: code2schema.cli
-    line: 93
-    cyclomatic_complexity: 6
-    calls_out: 13
-    calls_in: 1
-  code2schema.analyzer.graph.write_graphml:
-    name: write_graphml
-    module: code2schema.analyzer.graph
-    line: 94
+  code2schema.codegen.write_proto:
+    name: write_proto
+    module: code2schema.codegen
+    line: 61
     cyclomatic_complexity: 1
     calls_out: 2
     calls_in: 1
-  code2schema.cli.main:
-    name: main
+  code2schema.cli._validate_root:
+    name: _validate_root
     module: code2schema.cli
-    line: 153
-    cyclomatic_complexity: 5
-    calls_out: 11
-    calls_in: 0
-  code2schema.analyzer.cqrs._infer_role:
-    name: _infer_role
-    module: code2schema.analyzer.cqrs
-    line: 32
-    cyclomatic_complexity: 4
-    calls_out: 0
-    calls_in: 2
-  code2schema.analyzer.events._past_tense:
-    name: _past_tense
-    module: code2schema.analyzer.events
-    line: 161
+    line: 122
     cyclomatic_complexity: 1
-    calls_out: 3
+    calls_out: 1
+    calls_in: 1
+  code2schema.codegen.visualizer._build_stats:
+    name: _build_stats
+    module: code2schema.codegen.visualizer
+    line: 78
+    cyclomatic_complexity: 1
+    calls_out: 9
+    calls_in: 1
+  code2schema.analyzer.graph.hub_nodes:
+    name: hub_nodes
+    module: code2schema.analyzer.graph
+    line: 64
+    cyclomatic_complexity: 3
+    calls_out: 1
+    calls_in: 1
+  code2schema.analyzer.graph.detect_cycles:
+    name: detect_cycles
+    module: code2schema.analyzer.graph
+    line: 69
+    cyclomatic_complexity: 1
+    calls_out: 2
     calls_in: 1
   code2schema.core.extractor.extract_project:
     name: extract_project
     module: code2schema.core.extractor
-    line: 142
+    line: 173
     cyclomatic_complexity: 6
     calls_out: 5
     calls_in: 1
+  code2schema.analyzer.graph.write_graphml:
+    name: write_graphml
+    module: code2schema.analyzer.graph
+    line: 98
+    cyclomatic_complexity: 1
+    calls_out: 2
+    calls_in: 1
+  code2schema.analyzer.cqrs.build_workflows:
+    name: build_workflows
+    module: code2schema.analyzer.cqrs
+    line: 86
+    cyclomatic_complexity: 6
+    calls_out: 3
+    calls_in: 1
+  code2schema.analyzer.graph.graph_summary:
+    name: graph_summary
+    module: code2schema.analyzer.graph
+    line: 122
+    cyclomatic_complexity: 8
+    calls_out: 21
+    calls_in: 1
+  code2schema.codegen.visualizer._build_links:
+    name: _build_links
+    module: code2schema.codegen.visualizer
+    line: 56
+    cyclomatic_complexity: 6
+    calls_out: 4
+    calls_in: 1
+  code2schema.analyzer.events._find_command_handlers:
+    name: _find_command_handlers
+    module: code2schema.analyzer.events
+    line: 103
+    cyclomatic_complexity: 9
+    calls_out: 5
+    calls_in: 1
+  code2schema.analyzer.events._derive_event_name:
+    name: _derive_event_name
+    module: code2schema.analyzer.events
+    line: 140
+    cyclomatic_complexity: 5
+    calls_out: 8
+    calls_in: 2
 edges:
-- caller: code2schema.analyzer.cqrs.analyze
-  callee: code2schema.analyzer.cqrs.build_call_graph
+- caller: code2schema.cli._build_output_paths
+  callee: code2schema.cli._project_name_from_path
   call_type: resolved
-- caller: code2schema.analyzer.cqrs.analyze
-  callee: code2schema.analyzer.cqrs.build_workflows
+- caller: code2schema.cli._build_output_paths
+  callee: code2schema.cli._resolve_output_dir
   call_type: resolved
-- caller: code2schema.analyzer.cqrs.analyze
-  callee: code2schema.analyzer.cqrs.generate_rules
+- caller: code2schema.cli._build_output_paths
+  callee: code2schema.cli._resolve_required_path
   call_type: resolved
-- caller: code2schema.analyzer.cqrs.analyze
-  callee: code2schema.analyzer.cqrs._infer_role
-  call_type: resolved
-- caller: code2schema.analyzer.graph.graph_summary
-  callee: code2schema.analyzer.graph.detect_cycles
-  call_type: resolved
-- caller: code2schema.analyzer.graph.graph_summary
-  callee: code2schema.analyzer.graph.hub_nodes
-  call_type: resolved
-- caller: code2schema.analyzer.graph.graph_summary
-  callee: code2schema.analyzer.graph.centrality_report
-  call_type: resolved
-- caller: code2schema.analyzer.graph.graph_summary
-  callee: code2schema.analyzer.graph.layer_violations
-  call_type: resolved
-- caller: code2schema.core.extractor.extract_module
-  callee: code2schema.core.extractor._path_to_module
-  call_type: resolved
-- caller: code2schema.core.extractor.extract_project
-  callee: code2schema.core.extractor.extract_module
-  call_type: resolved
-- caller: code2schema.codegen.write_json
-  callee: code2schema.codegen.to_json
-  call_type: resolved
-- caller: code2schema.codegen.to_proto
-  callee: code2schema.codegen._safe_proto_name
-  call_type: resolved
-- caller: code2schema.codegen.write_proto
-  callee: code2schema.codegen.to_proto
-  call_type: resolved
-- caller: code2schema.codegen.write_markdown
-  callee: code2schema.codegen.to_markdown
-  call_type: resolved
-- caller: code2schema.codegen.visualizer.to_html
-  callee: code2schema.codegen.visualizer._build_graph_data
-  call_type: resolved
-- caller: code2schema.codegen.visualizer.write_html
-  callee: code2schema.codegen.visualizer.to_html
+- caller: code2schema.cli._build_output_paths
+  callee: code2schema.cli._resolve_optional_path
   call_type: resolved
 - caller: code2schema.cli._resolve_paths
-  callee: code2schema.cli._project_name_from_path
+  callee: code2schema.cli._validate_root
+  call_type: resolved
+- caller: code2schema.cli._resolve_paths
+  callee: code2schema.cli._build_output_paths
   call_type: resolved
 - caller: code2schema.cli._run_extraction
   callee: code2schema.core.extractor.extract_project
@@ -416,6 +446,66 @@ edges:
 - caller: code2schema.analyzer.events._derive_event_name
   callee: code2schema.analyzer.events._past_tense
   call_type: resolved
+- caller: code2schema.analyzer.cqrs.analyze
+  callee: code2schema.analyzer.cqrs.build_call_graph
+  call_type: resolved
+- caller: code2schema.analyzer.cqrs.analyze
+  callee: code2schema.analyzer.cqrs.build_workflows
+  call_type: resolved
+- caller: code2schema.analyzer.cqrs.analyze
+  callee: code2schema.analyzer.cqrs.generate_rules
+  call_type: resolved
+- caller: code2schema.analyzer.cqrs.analyze
+  callee: code2schema.analyzer.cqrs._infer_role
+  call_type: resolved
+- caller: code2schema.analyzer.graph.graph_summary
+  callee: code2schema.analyzer.graph.detect_cycles
+  call_type: resolved
+- caller: code2schema.analyzer.graph.graph_summary
+  callee: code2schema.analyzer.graph.hub_nodes
+  call_type: resolved
+- caller: code2schema.analyzer.graph.graph_summary
+  callee: code2schema.analyzer.graph.centrality_report
+  call_type: resolved
+- caller: code2schema.analyzer.graph.graph_summary
+  callee: code2schema.analyzer.graph.layer_violations
+  call_type: resolved
+- caller: code2schema.core.extractor.extract_module
+  callee: code2schema.core.extractor._path_to_module
+  call_type: resolved
+- caller: code2schema.core.extractor.extract_project
+  callee: code2schema.core.extractor.extract_module
+  call_type: resolved
+- caller: code2schema.codegen.write_json
+  callee: code2schema.codegen.to_json
+  call_type: resolved
+- caller: code2schema.codegen.to_proto
+  callee: code2schema.codegen._safe_proto_name
+  call_type: resolved
+- caller: code2schema.codegen.write_proto
+  callee: code2schema.codegen.to_proto
+  call_type: resolved
+- caller: code2schema.codegen.write_markdown
+  callee: code2schema.codegen.to_markdown
+  call_type: resolved
+- caller: code2schema.codegen.visualizer._build_graph_data
+  callee: code2schema.codegen.visualizer._build_nodes
+  call_type: resolved
+- caller: code2schema.codegen.visualizer._build_graph_data
+  callee: code2schema.codegen.visualizer._build_links
+  call_type: resolved
+- caller: code2schema.codegen.visualizer._build_graph_data
+  callee: code2schema.codegen.visualizer._group_rules_by_target
+  call_type: resolved
+- caller: code2schema.codegen.visualizer._build_graph_data
+  callee: code2schema.codegen.visualizer._build_stats
+  call_type: resolved
+- caller: code2schema.codegen.visualizer.to_html
+  callee: code2schema.codegen.visualizer._build_graph_data
+  call_type: resolved
+- caller: code2schema.codegen.visualizer.write_html
+  callee: code2schema.codegen.visualizer.to_html
+  call_type: resolved
 modules:
   code2schema.analyzer.cqrs:
   - code2schema.analyzer.cqrs._infer_role
@@ -442,11 +532,16 @@ modules:
   - code2schema.analyzer.graph.write_dot
   - code2schema.analyzer.graph.write_graphml
   code2schema.cli:
+  - code2schema.cli._build_output_paths
   - code2schema.cli._build_parser
   - code2schema.cli._project_name_from_path
+  - code2schema.cli._resolve_optional_path
+  - code2schema.cli._resolve_output_dir
   - code2schema.cli._resolve_paths
+  - code2schema.cli._resolve_required_path
   - code2schema.cli._run_extraction
   - code2schema.cli._run_reports
+  - code2schema.cli._validate_root
   - code2schema.cli._write_outputs
   - code2schema.cli.main
   code2schema.codegen:
@@ -459,6 +554,10 @@ modules:
   - code2schema.codegen.write_proto
   code2schema.codegen.visualizer:
   - code2schema.codegen.visualizer._build_graph_data
+  - code2schema.codegen.visualizer._build_links
+  - code2schema.codegen.visualizer._build_nodes
+  - code2schema.codegen.visualizer._build_stats
+  - code2schema.codegen.visualizer._group_rules_by_target
   - code2schema.codegen.visualizer.to_html
   - code2schema.codegen.visualizer.write_html
   code2schema.core.extractor:

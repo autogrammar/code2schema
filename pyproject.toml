@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "code2schema"
-version = "0.1.8"
+version = "0.1.9"
 description = "Semantic compiler: Code → AST → CQRS Model → Workflow DAG → Proto/Schema"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -19,9 +19,7 @@ dependencies = [
     "networkx>=3.2",
     "pydantic>=2.5",
 ]
-
-[project.license]
-text = "Apache-2.0"
+license = "Apache-2.0"
 
 [project.optional-dependencies]
 proto = ["grpcio-tools>=1.60"]
@@ -33,7 +31,7 @@ dev = [
     "black",
     "ruff",
     "costs>=0.1.20",
-    "pfix>=0.1.60",
+    "pfix>=0.1.60; python_version >= '3.10'",
 ]
 
 [project.scripts]

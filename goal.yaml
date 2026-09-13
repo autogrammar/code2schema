@@ -238,7 +238,7 @@ strategies:
   python:
     test: pytest tests/ -v
     build: python -m build
-    publish: twine upload dist/code2schema-{version}*
+    publish: twine upload --skip-existing dist/code2schema-{version}*
     publish_enabled: true
     dependencies:
       file: requirements.txt

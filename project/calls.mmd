@@ -1,71 +1,69 @@
 flowchart LR
 %% generated in 0.00s
     subgraph code2schema__analyzer
-        code2schema__analyzer__cqrs__build_call_graph["build_call_graph"]
-        code2schema__analyzer__graph__build_rich_graph["build_rich_graph"]
-        code2schema__analyzer__graph__write_dot["write_dot"]
-        code2schema__analyzer__cqrs__generate_rules["generate_rules"]
-        code2schema__analyzer__graph__centrality_report["centrality_report"]
-        code2schema__analyzer__events___derive_event_name["_derive_event_name"]
-        code2schema__analyzer__events___find_command_handlers["_find_command_handlers"]
+        code2schema__analyzer__events__infer_event_model["infer_event_model"]
+        code2schema__analyzer__cqrs__detect_cycles["detect_cycles"]
         code2schema__analyzer__graph__layer_violations["layer_violations"]
         code2schema__analyzer__events___find_handlers["_find_handlers"]
-        code2schema__analyzer__events__infer_event_model["infer_event_model"]
-        code2schema__analyzer__cqrs__analyze["analyze"]
-        code2schema__analyzer__graph__hub_nodes["hub_nodes"]
-        code2schema__analyzer__events___find_aggregates["_find_aggregates"]
-        code2schema__analyzer__cqrs__build_workflows["build_workflows"]
-        code2schema__analyzer__graph__detect_cycles["detect_cycles"]
-        code2schema__analyzer__graph__graph_summary["graph_summary"]
-        code2schema__analyzer__cqrs__detect_cycles["detect_cycles"]
-        code2schema__analyzer__events___find_emitters["_find_emitters"]
-        code2schema__analyzer__graph__write_graphml["write_graphml"]
-        code2schema__analyzer__cqrs___infer_role["_infer_role"]
         code2schema__analyzer__events___past_tense["_past_tense"]
+        code2schema__analyzer__cqrs___infer_role["_infer_role"]
+        code2schema__analyzer__events___find_aggregates["_find_aggregates"]
+        code2schema__analyzer__cqrs__generate_rules["generate_rules"]
+        code2schema__analyzer__graph__write_dot["write_dot"]
+        code2schema__analyzer__graph__build_rich_graph["build_rich_graph"]
+        code2schema__analyzer__cqrs__analyze["analyze"]
+        code2schema__analyzer__graph__centrality_report["centrality_report"]
+        code2schema__analyzer__events___find_emitters["_find_emitters"]
+        code2schema__analyzer__cqrs__build_call_graph["build_call_graph"]
+        code2schema__analyzer__graph__hub_nodes["hub_nodes"]
+        code2schema__analyzer__graph__detect_cycles["detect_cycles"]
+        code2schema__analyzer__graph__write_graphml["write_graphml"]
+        code2schema__analyzer__cqrs__build_workflows["build_workflows"]
+        code2schema__analyzer__graph__graph_summary["graph_summary"]
+        code2schema__analyzer__events___find_command_handlers["_find_command_handlers"]
+        code2schema__analyzer__events___derive_event_name["_derive_event_name"]
     end
     subgraph code2schema__cli
-        code2schema__cli___build_parser["_build_parser"]
-        code2schema__cli___resolve_paths["_resolve_paths"]
-        code2schema__cli___project_name_from_path["_project_name_from_path"]
-        code2schema__cli___write_outputs["_write_outputs"]
-        code2schema__cli___run_extraction["_run_extraction"]
         code2schema__cli___run_reports["_run_reports"]
+        code2schema__cli___resolve_optional_path["_resolve_optional_path"]
         code2schema__cli__main["main"]
+        code2schema__cli___resolve_required_path["_resolve_required_path"]
+        code2schema__cli___run_extraction["_run_extraction"]
+        code2schema__cli___project_name_from_path["_project_name_from_path"]
+        code2schema__cli___resolve_paths["_resolve_paths"]
+        code2schema__cli___resolve_output_dir["_resolve_output_dir"]
+        code2schema__cli___build_parser["_build_parser"]
+        code2schema__cli___write_outputs["_write_outputs"]
+        code2schema__cli___build_output_paths["_build_output_paths"]
+        code2schema__cli___validate_root["_validate_root"]
     end
     subgraph code2schema__codegen
-        code2schema__codegen__to_json["to_json"]
         code2schema__codegen___safe_proto_name["_safe_proto_name"]
         code2schema__codegen__write_markdown["write_markdown"]
-        code2schema__codegen__write_proto["write_proto"]
-        code2schema__codegen__to_markdown["to_markdown"]
-        code2schema__codegen__visualizer__write_html["write_html"]
-        code2schema__codegen__to_proto["to_proto"]
-        code2schema__codegen__write_json["write_json"]
         code2schema__codegen__visualizer__to_html["to_html"]
+        code2schema__codegen__write_json["write_json"]
+        code2schema__codegen__to_markdown["to_markdown"]
+        code2schema__codegen__visualizer___group_rules_by_target["_group_rules_by_target"]
+        code2schema__codegen__to_json["to_json"]
+        code2schema__codegen__to_proto["to_proto"]
+        code2schema__codegen__visualizer__write_html["write_html"]
+        code2schema__codegen__visualizer___build_nodes["_build_nodes"]
         code2schema__codegen__visualizer___build_graph_data["_build_graph_data"]
+        code2schema__codegen__write_proto["write_proto"]
+        code2schema__codegen__visualizer___build_stats["_build_stats"]
+        code2schema__codegen__visualizer___build_links["_build_links"]
     end
     subgraph code2schema__core
         code2schema__core__extractor__extract_module["extract_module"]
         code2schema__core__extractor___path_to_module["_path_to_module"]
         code2schema__core__extractor__extract_project["extract_project"]
     end
-    code2schema__analyzer__cqrs__analyze --> code2schema__analyzer__cqrs__build_call_graph
-    code2schema__analyzer__cqrs__analyze --> code2schema__analyzer__cqrs__build_workflows
-    code2schema__analyzer__cqrs__analyze --> code2schema__analyzer__cqrs__generate_rules
-    code2schema__analyzer__cqrs__analyze --> code2schema__analyzer__cqrs___infer_role
-    code2schema__analyzer__graph__graph_summary --> code2schema__analyzer__graph__detect_cycles
-    code2schema__analyzer__graph__graph_summary --> code2schema__analyzer__graph__hub_nodes
-    code2schema__analyzer__graph__graph_summary --> code2schema__analyzer__graph__centrality_report
-    code2schema__analyzer__graph__graph_summary --> code2schema__analyzer__graph__layer_violations
-    code2schema__core__extractor__extract_module --> code2schema__core__extractor___path_to_module
-    code2schema__core__extractor__extract_project --> code2schema__core__extractor__extract_module
-    code2schema__codegen__write_json --> code2schema__codegen__to_json
-    code2schema__codegen__to_proto --> code2schema__codegen___safe_proto_name
-    code2schema__codegen__write_proto --> code2schema__codegen__to_proto
-    code2schema__codegen__write_markdown --> code2schema__codegen__to_markdown
-    code2schema__codegen__visualizer__to_html --> code2schema__codegen__visualizer___build_graph_data
-    code2schema__codegen__visualizer__write_html --> code2schema__codegen__visualizer__to_html
-    code2schema__cli___resolve_paths --> code2schema__cli___project_name_from_path
+    code2schema__cli___build_output_paths --> code2schema__cli___project_name_from_path
+    code2schema__cli___build_output_paths --> code2schema__cli___resolve_output_dir
+    code2schema__cli___build_output_paths --> code2schema__cli___resolve_required_path
+    code2schema__cli___build_output_paths --> code2schema__cli___resolve_optional_path
+    code2schema__cli___resolve_paths --> code2schema__cli___validate_root
+    code2schema__cli___resolve_paths --> code2schema__cli___build_output_paths
     code2schema__cli___run_extraction --> code2schema__core__extractor__extract_project
     code2schema__cli___run_extraction --> code2schema__analyzer__cqrs__analyze
     code2schema__cli___run_extraction --> code2schema__analyzer__graph__build_rich_graph
@@ -90,3 +88,23 @@ flowchart LR
     code2schema__analyzer__events__infer_event_model --> code2schema__analyzer__events___find_command_handlers
     code2schema__analyzer__events__infer_event_model --> code2schema__analyzer__events___find_aggregates
     code2schema__analyzer__events___derive_event_name --> code2schema__analyzer__events___past_tense
+    code2schema__analyzer__cqrs__analyze --> code2schema__analyzer__cqrs__build_call_graph
+    code2schema__analyzer__cqrs__analyze --> code2schema__analyzer__cqrs__build_workflows
+    code2schema__analyzer__cqrs__analyze --> code2schema__analyzer__cqrs__generate_rules
+    code2schema__analyzer__cqrs__analyze --> code2schema__analyzer__cqrs___infer_role
+    code2schema__analyzer__graph__graph_summary --> code2schema__analyzer__graph__detect_cycles
+    code2schema__analyzer__graph__graph_summary --> code2schema__analyzer__graph__hub_nodes
+    code2schema__analyzer__graph__graph_summary --> code2schema__analyzer__graph__centrality_report
+    code2schema__analyzer__graph__graph_summary --> code2schema__analyzer__graph__layer_violations
+    code2schema__core__extractor__extract_module --> code2schema__core__extractor___path_to_module
+    code2schema__core__extractor__extract_project --> code2schema__core__extractor__extract_module
+    code2schema__codegen__write_json --> code2schema__codegen__to_json
+    code2schema__codegen__to_proto --> code2schema__codegen___safe_proto_name
+    code2schema__codegen__write_proto --> code2schema__codegen__to_proto
+    code2schema__codegen__write_markdown --> code2schema__codegen__to_markdown
+    code2schema__codegen__visualizer___build_graph_data --> code2schema__codegen__visualizer___build_nodes
+    code2schema__codegen__visualizer___build_graph_data --> code2schema__codegen__visualizer___build_links
+    code2schema__codegen__visualizer___build_graph_data --> code2schema__codegen__visualizer___group_rules_by_target
+    code2schema__codegen__visualizer___build_graph_data --> code2schema__codegen__visualizer___build_stats
+    code2schema__codegen__visualizer__to_html --> code2schema__codegen__visualizer___build_graph_data
+    code2schema__codegen__visualizer__write_html --> code2schema__codegen__visualizer__to_html

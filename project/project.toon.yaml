@@ -1,45 +1,45 @@
-# code2schema | 57 func | 8f | 113574L | python | 2026-05-07
+# code2schema | 66 func | 8f | 116492L | python | 2026-09-08
 # generated in 0.00s
 
 HEALTH:
-  CC̄=3.9  critical=1 (limit:10)  dup=0  cycles=0
+  CC̄=3.5  critical=0 (limit:10)  dup=0  cycles=0
 
-ALERTS[6]:
+ALERTS[5]:
   !   high_fan_out     extract_module = 13 (limit:10)
-  !   high_fan_out     _build_graph_data = 13 (limit:10)
-  !   high_fan_out     graph_summary = 11 (limit:10)
   !   high_fan_out     _print_summary = 11 (limit:10)
-  !   high_fan_out     _FunctionVisitor._process_func = 10 (limit:10)
+  !   high_fan_out     graph_summary = 11 (limit:10)
   !   high_fan_out     main = 10 (limit:10)
+  !   high_fan_out     _FunctionVisitor._process_func = 10 (limit:10)
 
-MODULES[23] (top by size):
+MODULES[26] (top by size):
   M[schema.json] 111256L C:0 F:0 CC↑0 D:0 (json)
-  M[goal.yaml] 511L C:0 F:0 CC↑0 D:0 (yaml)
-  M[code2schema/codegen/visualizer.py] 317L C:0 F:3 CC↑9 D:1 (python)
-  M[code2schema/cli.py] 180L C:0 F:8 CC↑11 D:0 (python)
-  M[code2schema/analyzer/events.py] 168L C:3 F:8 CC↑9 D:1 (python)
-  M[code2schema/analyzer/cqrs.py] 166L C:0 F:7 CC↑7 D:1 (python)
-  M[code2schema/core/extractor.py] 160L C:1 F:12 CC↑6 D:1 (python)
-  M[code2schema/analyzer/graph.py] 146L C:0 F:8 CC↑8 D:1 (python)
-  M[code2schema/codegen/__init__.py] 117L C:0 F:7 CC↑7 D:1 (python)
-  M[code2schema/core/models.py] 95L C:8 F:4 CC↑3 D:0 (python)
-  M[pyproject.toml] 77L C:0 F:0 CC↑0 D:0 (toml)
+  M[project_schema.json] 2614L C:0 F:0 CC↑0 D:0 (json)
+  M[goal.yaml] 528L C:0 F:0 CC↑0 D:0 (yaml)
+  M[code2schema/codegen/visualizer.py] 340L C:0 F:7 CC↑6 D:1 (python)
+  M[code2schema/cli.py] 249L C:0 F:13 CC↑6 D:0 (python)
+  M[code2schema/core/extractor.py] 191L C:1 F:12 CC↑6 D:1 (python)
+  M[code2schema/analyzer/cqrs.py] 174L C:0 F:7 CC↑7 D:1 (python)
+  M[code2schema/analyzer/events.py] 171L C:3 F:8 CC↑9 D:1 (python)
+  M[code2schema/analyzer/graph.py] 150L C:0 F:8 CC↑8 D:1 (python)
+  M[koru.yaml] 146L C:0 F:0 CC↑0 D:0 (yaml)
+  M[code2schema/codegen/__init__.py] 119L C:0 F:7 CC↑7 D:1 (python)
+  M[code2schema/core/models.py] 101L C:8 F:4 CC↑3 D:0 (python)
+  M[pyproject.toml] 86L C:0 F:0 CC↑0 D:0 (toml)
   M[docs/examples/api/advanced.py] 67L C:0 F:0 CC↑0 D:0 (python)
   M[docs/examples/outputs/schema-sample.json] 56L C:0 F:0 CC↑0 D:0 (json)
-  M[docs/examples/api/basic.py] 52L C:0 F:0 CC↑0 D:0 (python)
-  M[project.sh] 48L C:0 F:0 CC↑0 D:0 (shell)
-  LANGS: python:13/shell:3/yaml:3/json:2/yml:1/toml:1
+  LANGS: python:13/yaml:4/shell:3/json:3/yml:1/txt:1/toml:1
 
-HOTSPOTS[6]:
+HOTSPOTS[5]:
   ★ extract_module fan=13  // Parsuje jeden plik .py i zwraca ModuleIR.
-  ★ _build_graph_data fan=13  // Buduje nodes/links dla D3 force graph.
-  ★ graph_summary fan=11  // Tekstowe podsumowanie grafu.
   ★ _print_summary fan=11  // Print final summary with metrics and output file names.
+  ★ graph_summary fan=11  // Tekstowe podsumowanie grafu.
+  ★ main fan=10  // Orchestrates 10 calls
   ★ _FunctionVisitor._process_func fan=10  // Analysis pipeline, 10 stages
 
-REFACTOR[2]:
-  [1] H/H Split god module goal.yaml (511L, 0 classes)
-  [2] H/H Split god module schema.json (111256L, 0 classes)
+REFACTOR[3]:
+  [1] H/H Split god module goal.yaml (528L, 0 classes)
+  [2] H/H Split god module project_schema.json (2614L, 0 classes)
+  [3] H/H Split god module schema.json (111256L, 0 classes)
 
 EVOLUTION:
-  2026-05-07 CC̄=3.9 crit=1 113574L // Automated analysis
+  2026-09-08 CC̄=3.5 crit=0 116492L // Automated analysis

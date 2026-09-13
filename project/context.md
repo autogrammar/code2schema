@@ -3,34 +3,34 @@
 
 ## Overview
 
-- **Project**: /home/tom/github/semcod/code2schema
+- **Project**: /home/tom/github/autogrammar/code2schema
 - **Primary Language**: python
-- **Languages**: python: 13, yaml: 3, shell: 3, json: 2, toml: 1
+- **Languages**: python: 13, yaml: 4, json: 3, shell: 3, txt: 1
 - **Analysis Mode**: static
-- **Total Functions**: 57
+- **Total Functions**: 66
 - **Total Classes**: 12
-- **Modules**: 23
+- **Modules**: 26
 - **Entry Points**: 16
 
 ## Architecture by Module
+
+### code2schema.cli
+- **Functions**: 13
+- **File**: `cli.py`
 
 ### code2schema.core.extractor
 - **Functions**: 12
 - **Classes**: 1
 - **File**: `extractor.py`
 
-### code2schema.analyzer.graph
-- **Functions**: 8
-- **File**: `graph.py`
-
-### code2schema.cli
-- **Functions**: 8
-- **File**: `cli.py`
-
 ### code2schema.analyzer.events
 - **Functions**: 8
 - **Classes**: 3
 - **File**: `events.py`
+
+### code2schema.analyzer.graph
+- **Functions**: 8
+- **File**: `graph.py`
 
 ### code2schema.analyzer.cqrs
 - **Functions**: 7
@@ -40,14 +40,14 @@
 - **Functions**: 7
 - **File**: `__init__.py`
 
+### code2schema.codegen.visualizer
+- **Functions**: 7
+- **File**: `visualizer.py`
+
 ### code2schema.core.models
 - **Functions**: 4
 - **Classes**: 8
 - **File**: `models.py`
-
-### code2schema.codegen.visualizer
-- **Functions**: 3
-- **File**: `visualizer.py`
 
 ## Key Entry Points
 
@@ -111,7 +111,9 @@ Key execution flows identified:
 main [code2schema.cli]
   └─> _build_parser
   └─> _resolve_paths
-      └─> _project_name_from_path
+      └─> _validate_root
+      └─> _build_output_paths
+          └─> _project_name_from_path
 ```
 
 ### Flow 2: summary
@@ -173,15 +175,21 @@ visit_AsyncFunctionDef [code2schema.core.extractor._FunctionVisitor]
 - **Key Methods**: code2schema.core.models.SchemaIR.all_functions, code2schema.core.models.SchemaIR.orchestrators, code2schema.core.models.SchemaIR.commands, code2schema.core.models.SchemaIR.queries
 - **Inherits**: BaseModel
 
+### code2schema.analyzer.events.EventModel
+- **Methods**: 1
+- **Key Methods**: code2schema.analyzer.events.EventModel.summary
+
 ### code2schema.core.models.FunctionIR
 > Pojedyncza funkcja w modelu semantycznym.
 - **Methods**: 1
 - **Key Methods**: code2schema.core.models.FunctionIR.qualified_name
 - **Inherits**: BaseModel
 
-### code2schema.analyzer.events.EventModel
-- **Methods**: 1
-- **Key Methods**: code2schema.analyzer.events.EventModel.summary
+### code2schema.analyzer.events.DomainEvent
+- **Methods**: 0
+
+### code2schema.analyzer.events.CommandHandler
+- **Methods**: 0
 
 ### code2schema.core.models.CQRSRole
 - **Methods**: 0
@@ -210,22 +218,20 @@ visit_AsyncFunctionDef [code2schema.core.extractor._FunctionVisitor]
 - **Methods**: 0
 - **Inherits**: BaseModel
 
-### code2schema.analyzer.events.DomainEvent
-- **Methods**: 0
-
-### code2schema.analyzer.events.CommandHandler
-- **Methods**: 0
-
 ## Data Transformation Functions
 
 Key functions that process and transform data:
 
-### code2schema.core.extractor._FunctionVisitor._process_func
-- **Output to**: self._collect_calls, self._detect_side_effects, ast.get_docstring, FunctionIR, self.functions.append
-
 ### code2schema.cli._build_parser
 > Build CLI argument parser.
 - **Output to**: argparse.ArgumentParser, parser.add_argument, parser.add_argument, parser.add_argument, parser.add_argument
+
+### code2schema.cli._validate_root
+> Return ``Path`` for the analysis root from CLI args.
+- **Output to**: Path
+
+### code2schema.core.extractor._FunctionVisitor._process_func
+- **Output to**: self._collect_calls, self._detect_side_effects, ast.get_docstring, FunctionIR, self.functions.append
 
 ## Public API Surface
 
@@ -234,16 +240,16 @@ Functions exposed as public API (no underscore prefix):
 - `code2schema.analyzer.graph.graph_summary` - 21 calls
 - `code2schema.codegen.to_markdown` - 16 calls
 - `code2schema.core.extractor.extract_module` - 14 calls
-- `code2schema.analyzer.graph.write_dot` - 11 calls
 - `code2schema.cli.main` - 11 calls
 - `code2schema.analyzer.events.EventModel.summary` - 11 calls
+- `code2schema.analyzer.graph.write_dot` - 11 calls
 - `code2schema.codegen.to_proto` - 10 calls
 - `code2schema.analyzer.cqrs.analyze` - 9 calls
 - `code2schema.analyzer.cqrs.generate_rules` - 6 calls
+- `code2schema.analyzer.events.infer_event_model` - 5 calls
 - `code2schema.analyzer.cqrs.build_call_graph` - 5 calls
 - `code2schema.analyzer.graph.build_rich_graph` - 5 calls
 - `code2schema.core.extractor.extract_project` - 5 calls
-- `code2schema.analyzer.events.infer_event_model` - 5 calls
 - `code2schema.analyzer.graph.centrality_report` - 4 calls
 - `code2schema.analyzer.cqrs.build_workflows` - 3 calls
 - `code2schema.core.extractor._FunctionVisitor.visit_Import` - 3 calls

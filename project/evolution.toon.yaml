@@ -1,24 +1,29 @@
-# code2llm/evolution | 57 func | 8f | 2026-05-07
+# code2llm/evolution | 66 func | 8f | 2026-09-08
 # generated in 0.00s
 
-NEXT[2] (ranked by impact):
+NEXT[3] (ranked by impact):
   [1] !! SPLIT           schema.json
       WHY: 111256L, 0 classes, max CC=0
       EFFORT: ~4h  IMPACT: 0
 
-  [2] !! SPLIT           goal.yaml
-      WHY: 511L, 0 classes, max CC=0
+  [2] !! SPLIT           project_schema.json
+      WHY: 2614L, 0 classes, max CC=0
+      EFFORT: ~4h  IMPACT: 0
+
+  [3] !! SPLIT           goal.yaml
+      WHY: 528L, 0 classes, max CC=0
       EFFORT: ~4h  IMPACT: 0
 
 
-RISKS[2]:
+RISKS[3]:
   ⚠ Splitting schema.json may break 0 import paths
+  ⚠ Splitting project_schema.json may break 0 import paths
   ⚠ Splitting goal.yaml may break 0 import paths
 
 METRICS-TARGET:
-  CC̄:          3.9 → ≤2.7
-  max-CC:      11 → ≤5
-  god-modules: 2 → 0
+  CC̄:          3.5 → ≤2.4
+  max-CC:      9 → ≤4
+  god-modules: 3 → 0
   high-CC(≥15): 0 → ≤0
   hub-types:   0 → ≤0
 
@@ -47,4 +52,4 @@ PATTERNS (language parser shared logic):
     - Standardized FunctionInfo/ClassInfo models
 
 HISTORY:
-  prev CC̄=4.6 → now CC̄=3.9
+  prev CC̄=3.9 → now CC̄=3.5

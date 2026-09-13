@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.9] - 2026-09-13
+
+### Docs
+- Update README.md
+- Update project/README.md
+- Update project/context.md
+
+### Other
+- Update .gitignore
+- Update .planfile/.store.lock
+- Update .planfile/config.yaml
+- Update .planfile/config.yaml.fast.json
+- Update .planfile/events/.logs.dsl.date
+- Update .planfile/events/.logs.dsl.v1
+- Update .planfile/events/history/logs-2026-09-08.dsl.txt
+- Update .planfile/events/logs.dsl.txt
+- Update .planfile/events/operations.jsonl
+- Update .planfile/sprints/current.yaml
+- ... and 18 more files
+
 ## [0.1.8] - 2026-06-29
 
 ### Docs

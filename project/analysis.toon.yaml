@@ -1,54 +1,77 @@
-# code2llm | 23f 113574L | python:13,yaml:3,shell:3,json:2,toml:1,yml:1 | 2026-05-07
+# code2llm | 26f 116492L | python:13,yaml:4,json:3,shell:3,txt:1,toml:1,yml:1 | 2026-09-08
 # generated in 0.02s
-# CC̄=3.9 | critical:0/57 | dups:0 | cycles:0
+# CC̅=3.5 | critical:0/66 | dups:0 | cycles:0
 
 HEALTH[0]: ok
 
 REFACTOR[0]: none needed
 
 PIPELINES[15]:
-  [1] Src [centrality]: centrality
+  [1] Src [main]: main → _build_parser
       PURITY: 100% pure
-  [2] Src [__init__]: __init__
+  [2] Src [summary]: summary
       PURITY: 100% pure
-  [3] Src [visit_Import]: visit_Import
+  [3] Src [centrality]: centrality
       PURITY: 100% pure
-  [4] Src [visit_ImportFrom]: visit_ImportFrom
+  [4] Src [__init__]: __init__
       PURITY: 100% pure
-  [5] Src [visit_FunctionDef]: visit_FunctionDef
+  [5] Src [visit_Import]: visit_Import
+      PURITY: 100% pure
+  [6] Src [visit_ImportFrom]: visit_ImportFrom
+      PURITY: 100% pure
+  [7] Src [visit_FunctionDef]: visit_FunctionDef
+      PURITY: 100% pure
+  [8] Src [visit_AsyncFunctionDef]: visit_AsyncFunctionDef
+      PURITY: 100% pure
+  [9] Src [_process_func]: _process_func
+      PURITY: 100% pure
+  [10] Src [_collect_calls]: _collect_calls
+      PURITY: 100% pure
+  [11] Src [_resolve_call_name]: _resolve_call_name
+      PURITY: 100% pure
+  [12] Src [_detect_side_effects]: _detect_side_effects
+      PURITY: 100% pure
+  [13] Src [orchestrators]: orchestrators
+      PURITY: 100% pure
+  [14] Src [commands]: commands
+      PURITY: 100% pure
+  [15] Src [queries]: queries
       PURITY: 100% pure
 
 LAYERS:
-  code2schema/                    CC̄=3.9    ←in:0  →out:9  !! split
-  │ visualizer                 317L  0C    3m  CC=9      ←1
-  │ cli                        180L  0C    8m  CC=11     ←0
-  │ events                     168L  3C    8m  CC=9      ←1
-  │ cqrs                       166L  0C    7m  CC=7      ←1
-  │ extractor                  160L  1C   12m  CC=6      ←1
-  │ graph                      146L  0C    8m  CC=8      ←1
-  │ __init__                   117L  0C    7m  CC=7      ←1
-  │ models                      95L  8C    4m  CC=3      ←0
-  │ __init__                    10L  0C    0m  CC=0.0    ←0
+  code2schema/                    CC̄=3.5    ←in:0  →out:9  !! split
+  │ visualizer                 340L  0C    7m  CC=6      ←1
+  │ cli                        249L  0C   13m  CC=6      ←0
+  │ extractor                  191L  1C   12m  CC=6      ←1
+  │ cqrs                       174L  0C    7m  CC=7      ←1
+  │ events                     171L  3C    8m  CC=9      ←1
+  │ graph                      150L  0C    8m  CC=8      ←1
+  │ __init__                   119L  0C    7m  CC=7      ←1
+  │ models                     101L  8C    4m  CC=3      ←0
+  │ __init__                    16L  0C    0m  CC=0.0    ←0
   │ __init__                     1L  0C    0m  CC=0.0    ←0
   │ __init__                     1L  0C    0m  CC=0.0    ←0
   │
   ./                              CC̄=0.0    ←in:0  →out:0
   │ !! schema.json              111256L  0C    0m  CC=0.0    ←0
-  │ !! goal.yaml                  511L  0C    0m  CC=0.0    ←0
-  │ pyproject.toml              77L  0C    0m  CC=0.0    ←0
+  │ !! project_schema.json       2614L  0C    0m  CC=0.0    ←0
+  │ !! goal.yaml                  528L  0C    0m  CC=0.0    ←0
+  │ koru.yaml                  146L  0C    0m  CC=0.0    ←0
+  │ pyproject.toml              86L  0C    0m  CC=0.0    ←0
   │ project.sh                  48L  0C    0m  CC=0.0    ←0
-  │ Taskfile.yml                36L  0C    0m  CC=0.0    ←0
+  │ Taskfile.yml                42L  0C    0m  CC=0.0    ←0
+  │ local.dev.txt               11L  0C    0m  CC=0.0    ←0
   │
   docs/                           CC̄=0.0    ←in:0  →out:0
   │ advanced                    67L  0C    0m  CC=0.0    ←0
   │ schema-sample.json          56L  0C    0m  CC=0.0    ←0
-  │ basic                       52L  0C    0m  CC=0.0    ←0
   │ basic.sh                    45L  0C    0m  CC=0.0    ←0
   │ semcod.sh                   20L  0C    0m  CC=0.0    ←0
+  │ basic                       10L  0C    0m  CC=0.0    ←0
   │
   testql-scenarios/               CC̄=0.0    ←in:0  →out:0
-  │ cli.testql.yaml             25L  0C    0m  CC=0.0    ←0
-  │ generated-cli-tests.testql.toon.yaml    20L  0C    0m  CC=0.0    ←0
+  │ cli.testql.yaml             29L  0C    0m  CC=0.0    ←0
+  │ generated-cli-tests.testql.toon.yaml    21L  0C    0m  CC=0.0    ←0
   │
 
 COUPLING:

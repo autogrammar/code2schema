@@ -1,0 +1,233 @@
+source: code2llm
+# generated in 0.01s
+schema: code2llm.planfile_tickets.v1
+project_root: /home/tom/github/autogrammar/code2schema
+tickets:
+- signal: code2llm_smell_data_clump
+  title: 'Address code smell: Data Clump: value, default_name, out_dir'
+  description: 'code2llm reports `Data Clump: value, default_name, out_dir` in `code2schema/cli.py:106`.
+
+
+    Arguments (value, default_name, out_dir) are used together in multiple functions:
+    code2schema.cli._resolve_required_path, code2schema.cli._resolve_optional_path.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - data-clump
+  files:
+  - code2schema/cli.py
+  dedupe_key: 'code2llm:smell:data_clump:code2schema/cli.py:106:Data Clump: value,
+    default_name, out_dir'
+- signal: code2llm_smell_data_clump
+  title: 'Address code smell: Data Clump: value, default_name, out_dir'
+  description: 'code2llm reports `Data Clump: value, default_name, out_dir` in `code2schema/cli.py:110`.
+
+
+    Arguments (value, default_name, out_dir) are used together in multiple functions:
+    code2schema.cli._resolve_required_path, code2schema.cli._resolve_optional_path.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - data-clump
+  files:
+  - code2schema/cli.py
+  dedupe_key: 'code2llm:smell:data_clump:code2schema/cli.py:110:Data Clump: value,
+    default_name, out_dir'
+- signal: code2llm_smell_god_function
+  title: 'Address code smell: God Function: _build_parser'
+  description: 'code2llm reports `God Function: _build_parser` in `code2schema/cli.py:47`.
+
+
+    Function ''_build_parser'' is oversized: CC=1, fan-out=2, mutations=15.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - god-function
+  files:
+  - code2schema/cli.py
+  dedupe_key: 'code2llm:smell:god_function:code2schema/cli.py:47:God Function: _build_parser'
+- signal: code2llm_smell_god_function
+  title: 'Address code smell: God Function: _print_summary'
+  description: 'code2llm reports `God Function: _print_summary` in `code2schema/cli.py:199`.
+
+
+    Function ''_print_summary'' is oversized: CC=4, fan-out=11, mutations=5.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - god-function
+  files:
+  - code2schema/cli.py
+  dedupe_key: 'code2llm:smell:god_function:code2schema/cli.py:199:God Function: _print_summary'
+- signal: code2llm_smell_god_function
+  title: 'Address code smell: God Function: _resolve_paths'
+  description: 'code2llm reports `God Function: _resolve_paths` in `code2schema/cli.py:141`.
+
+
+    Function ''_resolve_paths'' is oversized: CC=1, fan-out=2, mutations=9.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - god-function
+  files:
+  - code2schema/cli.py
+  dedupe_key: 'code2llm:smell:god_function:code2schema/cli.py:141:God Function: _resolve_paths'
+- signal: code2llm_smell_god_function
+  title: 'Address code smell: God Function: analyze'
+  description: 'code2llm reports `God Function: analyze` in `code2schema/analyzer/cqrs.py:147`.
+
+
+    Function ''analyze'' is oversized: CC=6, fan-out=8, mutations=8.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - god-function
+  files:
+  - code2schema/analyzer/cqrs.py
+  dedupe_key: 'code2llm:smell:god_function:code2schema/analyzer/cqrs.py:147:God Function:
+    analyze'
+- signal: code2llm_smell_god_function
+  title: 'Address code smell: God Function: build_rich_graph'
+  description: 'code2llm reports `God Function: build_rich_graph` in `code2schema/analyzer/graph.py:24`.
+
+
+    Function ''build_rich_graph'' is oversized: CC=8, fan-out=5, mutations=7.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - god-function
+  files:
+  - code2schema/analyzer/graph.py
+  dedupe_key: 'code2llm:smell:god_function:code2schema/analyzer/graph.py:24:God Function:
+    build_rich_graph'
+- signal: code2llm_smell_god_function
+  title: 'Address code smell: God Function: extract_module'
+  description: 'code2llm reports `God Function: extract_module` in `code2schema/core/extractor.py:146`.
+
+
+    Function ''extract_module'' is oversized: CC=5, fan-out=13, mutations=5.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - god-function
+  files:
+  - code2schema/core/extractor.py
+  dedupe_key: 'code2llm:smell:god_function:code2schema/core/extractor.py:146:God Function:
+    extract_module'
+- signal: code2llm_smell_god_function
+  title: 'Address code smell: God Function: graph_summary'
+  description: 'code2llm reports `God Function: graph_summary` in `code2schema/analyzer/graph.py:122`.
+
+
+    Function ''graph_summary'' is oversized: CC=8, fan-out=11, mutations=12.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - god-function
+  files:
+  - code2schema/analyzer/graph.py
+  dedupe_key: 'code2llm:smell:god_function:code2schema/analyzer/graph.py:122:God Function:
+    graph_summary'
+- signal: code2llm_smell_god_function
+  title: 'Address code smell: God Function: main'
+  description: 'code2llm reports `God Function: main` in `code2schema/cli.py:222`.
+
+
+    Function ''main'' is oversized: CC=5, fan-out=10, mutations=20.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - god-function
+  files:
+  - code2schema/cli.py
+  dedupe_key: 'code2llm:smell:god_function:code2schema/cli.py:222:God Function: main'
+- signal: code2llm_smell_god_function
+  title: 'Address code smell: God Function: to_markdown'
+  description: 'code2llm reports `God Function: to_markdown` in `code2schema/codegen/__init__.py:68`.
+
+
+    Function ''to_markdown'' is oversized: CC=7, fan-out=7, mutations=13.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - god-function
+  files:
+  - code2schema/codegen/__init__.py
+  dedupe_key: 'code2llm:smell:god_function:code2schema/codegen/__init__.py:68:God
+    Function: to_markdown'
+- signal: code2llm_smell_god_function
+  title: 'Address code smell: God Function: write_dot'
+  description: 'code2llm reports `God Function: write_dot` in `code2schema/analyzer/graph.py:103`.
+
+
+    Function ''write_dot'' is oversized: CC=3, fan-out=8, mutations=8.
+
+
+    Make the smallest refactor that removes the smell and run local tests.'
+  priority: normal
+  labels:
+  - llm-ready
+  - code2llm
+  - code-smell
+  - god-function
+  files:
+  - code2schema/analyzer/graph.py
+  dedupe_key: 'code2llm:smell:god_function:code2schema/analyzer/graph.py:103:God Function:
+    write_dot'
+applied: []
+skipped: []
