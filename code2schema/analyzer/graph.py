@@ -54,10 +54,19 @@ def build_rich_graph(schema: SchemaIR) -> nx.DiGraph:
 
 
 def centrality_report(G: nx.DiGraph, top_n: int = 10) -> List[Tuple[str, float]]:
-    """PageRank — funkcje najważniejsze architektonicznie."""
+    """PageRank — funkcje najważniejsze architektonicznie.
+
+    Falls back to in-degree ranking when scipy is unavailable
+    (networkx pagerank delegates to scipy on some versions).
+    """
     if G.number_of_edges() == 0:
         return []
-    pr = nx.pagerank(G, alpha=0.85)
+    try:
+        pr = nx.pagerank(G, alpha=0.85)
+    except ModuleNotFoundError:
+        pr = dict(G.in_degree())
+        total = sum(pr.values()) or 1
+        pr = {node: deg / total for node, deg in pr.items()}
     return sorted(pr.items(), key=lambda x: x[1], reverse=True)[:top_n]
 
 
